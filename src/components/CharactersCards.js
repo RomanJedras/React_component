@@ -2,8 +2,9 @@ import React from "react";
 import CharacterCard from "./CharacterCard/CharacterCard";
 
 const CharactersCards = ({ characters }) =>
-  characters.map(({ name, image, species, gender }) => (
+  characters.map(({id, name, image, species, gender }) => (
     <CharacterCard
+      id={id}
       name={name}
       image={image}
       species={species}

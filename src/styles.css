@@ -63,3 +63,10 @@ body {
 .desc__name {
 	font-size: 1.8em;
 }
+
+.error-message {
+	color: #FFF;
+	display: flex;
+	justify-content: center;
+	margin-top: 90px;
+}

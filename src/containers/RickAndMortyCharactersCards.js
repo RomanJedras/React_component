@@ -12,19 +12,23 @@ class RickAndMortyCharactersCards extends React.Component {
      super(props)
      
      this.state = {
-       characters: []
+       characters: [],
+       loadimg: true,
+       error: null,
      }
    }
   
   componentDidMount() {
     axios.get(API_URL).then(({ data: { results } }) => {
-      this.setState({ characters: results });
-    });
+      this.setState({ characters: results, loadimg: false });
+    }).catch(error =>
+      this.setState(error))
   }
   
  
   render() {
-    return <CharactersCards characters={this.state.characters} />;
+     const {characters, error, loadimg} = this.state;
+    return <CharactersCards characters={characters} error={error} loadimg={loadimg} />;
    }
 }
 
